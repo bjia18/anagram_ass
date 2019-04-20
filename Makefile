@@ -1,16 +1,16 @@
 CC = gcc
 CFLAGS = -Wall -std=c99
 
-all: test_dictionary
+all: complete_dict
 
 dictionary.o: dictionary.c dictionary.h 
 	$(CC) $(CFLAGS) -c dictionary.c
 
-test_dictionary.o: test_dictionary.c dictionary.o dictionary.h
-	$(CC) $(CFLAGS) -c test_dictionary.c
+complete_dict.o: complete_dict.c dictionary.o dictionary.h
+	$(CC) $(CFLAGS) -c complete_dict.c
 	
-test_dictionary: test_dictionary.o 
-	$(CC) $(CFLAGS) -o test_dictionary dictionary.o test_dictionary.o 
+complete_dict: complete_dict.o 
+	$(CC) $(CFLAGS) -o complete_dict dictionary.o complete_dict.o 
 
 clean:
-	rm *.o test_dictionary
+	rm *.o complete_dict

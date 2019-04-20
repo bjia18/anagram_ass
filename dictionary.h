@@ -2,7 +2,7 @@
 #define DICTIONARY_H
 
 #include <stdlib.h>
-#define DEFAULT_HASH_SIZE 500
+#define DEFAULT_HASH_SIZE 500000
 
 typedef struct v_node {
 	char* value;
@@ -19,6 +19,7 @@ typedef struct d_node {
 
 char * copystr (const char *);
 unsigned hash(const char *s);
+int sort_func(const void *a, const void *b);
 
 //Returns a specific entry for a given key
 DNode * get (DNode ** dictionary, int hash_size, const char *key);
